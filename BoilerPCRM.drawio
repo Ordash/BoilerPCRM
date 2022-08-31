@@ -1,1 +1,13 @@
-<mxfile host="app.diagrams.net" modified="2022-08-31T12:39:23.834Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.0.0 Safari/537.36" etag="XE_MjDAu7rSU9VmhQTN-" version="20.2.7" type="github"><diagram id="gJdxHdDsA8YdoU1Gg34y" name="1 oldal">ddHNEoIgEADgp+EuMGN1NqtLJw+dGdmEGXQdpJF6+nTAjLFOLN8uLD+EF60/W9GrK0owhGXSE34kjLEsz6dhlmcQSjkN0lgto61Q6RdEzKI+tIQhKXSIxuk+xRq7DmqXmLAWx7Tsjibt2osGNlDVwmz1pqVTQfdst/oFdKOWzjQ/hEwrluJ4k0EJieMX8ZLwwiK6ELW+ADO/3vIuYd3pT/ZzMAud+7FgCta9p0nyRbx8Aw==</diagram></mxfile>
+<mxfile host="app.diagrams.net" modified="2022-08-31T13:15:57.183Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.0.0 Safari/537.36" etag="FVKpSLdqPTchHh-_lPPR" version="20.2.7" type="github">
+  <diagram id="gJdxHdDsA8YdoU1Gg34y" name="1 oldal">
+    <mxGraphModel dx="1181" dy="646" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="wloYmbXGEQTj7zKc8aFy-1" value="&lt;div style=&quot;box-sizing: border-box; width: 100%; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; padding: 2px; line-height: 1.9; font-size: 14px;&quot;&gt;Tablename&lt;/div&gt;" style="verticalAlign=top;align=center;overflow=fill;html=1;fillColor=#dae8fc;strokeColor=#000000;strokeWidth=1;shadow=0;sketch=0;glass=0;fillStyle=auto;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="280" y="570" width="230" height="175" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
