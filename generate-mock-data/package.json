@@ -1,0 +1,15 @@
+{
+  "name": "load-mock-data",
+  "version": "1.0.0",
+  "description": "Generates mock crm data",
+  "main": "generate-mock-data.js",
+  "scripts": {
+    "start": "node generate-mock-data.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "pg": "^8.8.0"
+  }
+}
