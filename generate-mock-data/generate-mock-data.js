@@ -1,22 +1,34 @@
-const { Pool, Client } = require('pg');
+const { getClient, tables, closePool } = require('./db')
 
-const env = process.env;
+const EXEC = 'Executing query: '
 
-const pool = new Pool({
-    user: env.PGUSER,
-    host: env.PGHOST,
-    database: env.PGDATABASE,
-    password: env.PGPASSWORD,
-    port: env.PGPORT
-})
-console.log("Pool created!")
-
-async function selectNowAndPrint() {
-    const res = await pool.query('SELECT * FROM persons')
-    await pool.end()
-    console.log(res.rows);
+async function createTables() {
+    const client = await getClient()
+    try {
+        await client.query('BEGIN')
+        const createEmployee = `CREATE TABLE ${tables.EMPLOYEE.name} (
+            ${tables.EMPLOYEE.fields.ID} SERIAL PRIMARY KEY,
+            ${tables.EMPLOYEE.fields.NAME} VARCHAR(50) NOT NULL,
+            ${tables.EMPLOYEE.fields.EMAIL} VARCHAR(255) NOT NULL UNIQUE
+        )`;
+        console.log(EXEC + createEmployee)
+        await client.query(createEmployee)
+        const createClient = `CREATE TABLE ${tables.CLIENT.name} (
+            ${tables.CLIENT.fields.ID} SERIAL PRIMARY KEY,
+            ${tables.CLIENT.fields.NAME} VARCHAR(255) NOT NULL UNIQUE,
+            ${tables.CLIENT.fields.EMAIL} VARCHAR(255) NOT NULL UNIQUE
+        )`
+        console.log(EXEC + createClient)
+        await client.query(createClient)
+        await client.query('COMMIT')
+      } catch (e) {
+        await client.query('ROLLBACK')
+        throw e
+      } finally {
+        client.release()
+      }
 }
 
-selectNowAndPrint()
+createTables()
 
-
+closePool()

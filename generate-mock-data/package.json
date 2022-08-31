@@ -1,15 +1,17 @@
 {
-  "name": "load-mock-data",
+  "name": "generate-mock-data",
   "version": "1.0.0",
   "description": "Generates mock crm data",
   "main": "generate-mock-data.js",
   "scripts": {
+    "drop-table": "node drop-table.js",
     "start": "node generate-mock-data.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "pg": "^8.8.0"
+    "pg": "^8.8.0",
+    "unique-names-generator": "^4.7.1"
   }
 }
