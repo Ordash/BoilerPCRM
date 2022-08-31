@@ -1,0 +1,1 @@
+Playing around with Postgres Solr and Kafka
