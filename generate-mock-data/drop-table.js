@@ -1,4 +1,4 @@
-const { dropTables, closePool } = require('./db')
+const { dropTables, closePool } = require('./db');
 
-dropTables()
-closePool()
+dropTables();
+closePool();

@@ -1,17 +1,22 @@
 {
-  "name": "generate-mock-data",
-  "version": "1.0.0",
-  "description": "Generates mock crm data",
-  "main": "generate-mock-data.js",
-  "scripts": {
-    "drop-table": "node drop-table.js",
-    "start": "node generate-mock-data.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "pg": "^8.8.0",
-    "unique-names-generator": "^4.7.1"
-  }
+	"name": "generate-mock-data",
+	"version": "1.0.0",
+	"description": "Generates mock crm data",
+	"main": "app.js",
+	"scripts": {
+		"drop-table": "node drop-table.js",
+		"start": "node app.js",
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"cheerio": "^1.0.0-rc.12",
+		"jsdom": "^20.0.0",
+		"pg": "^8.8.0",
+		"puppeteer": "^17.1.3",
+		"request": "^2.88.2",
+		"request-promise": "^4.2.6",
+		"unique-names-generator": "^4.7.1"
+	}
 }
