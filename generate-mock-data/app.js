@@ -5,7 +5,10 @@ async function createEmployeeTable(client) {
 	const query = `CREATE TABLE ${tables.EMPLOYEE.name} (
         ${tables.EMPLOYEE.fields.ID} SERIAL PRIMARY KEY,
         ${tables.EMPLOYEE.fields.NAME} VARCHAR(50) NOT NULL,
-        ${tables.EMPLOYEE.fields.EMAIL} VARCHAR(255) NOT NULL UNIQUE
+        ${tables.EMPLOYEE.fields.EMAIL} VARCHAR(255) NOT NULL UNIQUE,
+		${tables.EMPLOYEE.fields.PARENT_ID} BIGINT NOT NULL,
+		FOREIGN KEY (${tables.EMPLOYEE.fields.PARENT_ID}) 
+		REFERENCES ${tables.EMPLOYEE.name}(${tables.EMPLOYEE.fields.ID})
     )`;
 	await client.query(query);
 }
@@ -26,18 +29,29 @@ async function createTables(client) {
 
 function generateEmployeeValues() {
 	const values = [];
+	let parent = 1;
 	for (let i = 0; i < tables.EMPLOYEE.rows; i++) {
 		const name = getRandomFullName();
 		const email = `${name.toLowerCase().replace(' ', '.')}@company.com`;
-		values.push(`('${name}', '${email}')`);
+		values.push(`('${name}', '${email}', ${parent})`);
+		if (i >= 6 && i < 15 && i % 3 === 0) {
+			parent++;
+		}
+		if (i >= 15 && i < 30 && i % 5 === 0) {
+			parent++;
+		}
+		if (i >= 30 && i % 10 === 0) {
+			parent++;
+		}
 	}
 	return values.join(', ');
 }
 
 async function populateEmployee(client) {
-	const query = `INSERT INTO ${tables.EMPLOYEE.name} (${
-		tables.EMPLOYEE.fields.NAME
-	}, ${tables.EMPLOYEE.fields.EMAIL})
+	const query = `INSERT INTO ${tables.EMPLOYEE.name} 
+	(${tables.EMPLOYEE.fields.NAME}, 
+		${tables.EMPLOYEE.fields.EMAIL},
+		${tables.EMPLOYEE.fields.PARENT_ID})
     VALUES ${generateEmployeeValues()}`;
 	await client.query(query);
 }
