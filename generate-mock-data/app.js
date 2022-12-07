@@ -14,6 +14,7 @@ async function createEmployeeTable(client) {
 	await client.query(query);
 }
 
+// One more  comment
 async function createClientTable(client) {
 	const query = `CREATE TABLE ${tables.CLIENT.name} (
         ${tables.CLIENT.fields.ID} SERIAL PRIMARY KEY,
