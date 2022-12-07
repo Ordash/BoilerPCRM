@@ -11,6 +11,7 @@ const pool = new Pool({
 });
 console.log('Pool created!');
 
+// Another comment test rebase
 const tables = {
 	EMPLOYEE: {
 		rows: 100,
