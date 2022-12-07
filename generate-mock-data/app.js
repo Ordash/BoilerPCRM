@@ -1,6 +1,7 @@
 const { getClient, tables, closePool } = require('./db');
 const { getRandomFullName } = require('./generate-data');
 
+// Hello comment
 async function createEmployeeTable(client) {
 	const query = `CREATE TABLE ${tables.EMPLOYEE.name} (
         ${tables.EMPLOYEE.fields.ID} SERIAL PRIMARY KEY,
