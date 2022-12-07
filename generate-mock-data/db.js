@@ -19,6 +19,7 @@ const tables = {
 			ID: 'id',
 			NAME: 'name',
 			EMAIL: 'email',
+			PARENT_ID: 'parent_id',
 		},
 	},
 	CLIENT: {
